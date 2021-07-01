@@ -1,0 +1,5 @@
+notes
+
+The notebook folder stores things I want to keep with package
+(notes, code in progress to add to package later) but that should
+not be actually published with package

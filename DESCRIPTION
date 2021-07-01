@@ -1,0 +1,5 @@
+Package: grandcanyonfish
+Type: Package
+Title: Functions to simply working with fisheries data from the Grand Canyon
+Version: 0.0.1.0
+RoxygenNote: 7.1.1
