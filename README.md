@@ -1,5 +1,9 @@
 # grandcanyonfish
-Functions to simply working with fisheries data from the Grand Canyon
+Functions to simplify working with fisheries data from the Grand Canyon
+
+To install:
+
+`devtools::install_github("jkboyer/grandcanyonfish")`
 
 ### River mile to kilometer conversions
 
