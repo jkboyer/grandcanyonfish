@@ -20,3 +20,12 @@ usethis::use_github() #create repo on my github
 # test that loading from github works
 devtools::install_github("jkboyer/grandcanyonfish")
 library(grandcanyonfish)
+
+
+#to get data into Rdata format to include in package
+#load data from text
+wt.length.coef <- read.table("./notebook/weight_length_coefficients.tsv")
+colnames(wt.length.coef) <- wt.length.coef[1,]
+wt.length.coef <- wt.length.coef[-1,]
+#save
+save(wt.length.coef, file="./data/weight_length_coef.RData")
