@@ -1,7 +1,7 @@
 #required libraries to build package
 library(roxygen2) # easily generates documentation for package
 library(devtools) # builds packages
-library(usethis) # push to git using R code
+library(usethis) # automates package/project tasks such as git pushes
 
 getwd() #check that working directory is package folder
 
@@ -24,8 +24,10 @@ library(grandcanyonfish)
 
 #to get data into Rdata format to include in package
 #load data from text
-wt.length.coef <- read.table("./notebook/weight_length_coefficients.tsv")
-colnames(wt.length.coef) <- wt.length.coef[1,]
-wt.length.coef <- wt.length.coef[-1,]
+weight_length_coef <- read.table("./notebook/weight_length_coefficients.tsv")
+colnames(weight_length_coef) <- wt.length.coef[1,]
+weight_length_coef <- weight_length_coef[-1,]
 #save
-save(wt.length.coef, file="./data/weight_length_coef.RData")
+save(weight_length_coef, file = "./data/weight_length_coef.RData")
+
+#or use_data() will save as .rdata in data folder
