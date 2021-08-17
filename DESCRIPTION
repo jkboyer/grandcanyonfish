@@ -5,3 +5,4 @@ Version: 0.0.1.0
 RoxygenNote: 7.1.1
 URL: https://github.com/jkboyer/grandcanyonfish
 BugReports: https://github.com/jkboyer/grandcanyonfish/issues
+LazyData: true

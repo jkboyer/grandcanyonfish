@@ -2,7 +2,11 @@
 
 export(cfs_to_cms)
 export(cms_to_cfs)
+export(fork_from_total)
 export(km_to_mile)
 export(km_to_mile_COR)
 export(mile_to_km)
 export(mile_to_km_COR)
+export(total_from_fork)
+export(weight_from_fork)
+export(weight_from_total)

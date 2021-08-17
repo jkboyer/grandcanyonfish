@@ -15,7 +15,7 @@ roxygenise()      # Builds the help file
 
 # put package on github
 usethis::use_git() #this does a git commit but does not push to my github
-usethis::use_github() #create repo on my github
+#usethis::use_github() #create repo on my github
 
 # test that loading from github works
 devtools::install_github("jkboyer/grandcanyonfish")
@@ -24,10 +24,12 @@ library(grandcanyonfish)
 
 #to get data into Rdata format to include in package
 #load data from text
-weight_length_coef <- read.table("./notebook/weight_length_coefficients.tsv")
-colnames(weight_length_coef) <- wt.length.coef[1,]
-weight_length_coef <- weight_length_coef[-1,]
+weight_length_coef <- read.table("./notebook/weight_length_coefficients.tsv",
+                                 header = TRUE)
+str(weight_length_coef)
+
 #save
 save(weight_length_coef, file = "./data/weight_length_coef.RData")
+
 
 #or use_data() will save as .rdata in data folder
