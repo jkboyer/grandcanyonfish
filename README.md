@@ -5,7 +5,9 @@ To install:
 
 `devtools::install_github("jkboyer/grandcanyonfish")`
 
-### River mile to kilometer conversions
+All functions have documentation/help files, use `?` before a function (run `?mile_to_km_COR()`) to see help file for a function
+
+### 📏 River mile to kilometer conversions
 
 Mile/kilometer conversion functions for Grand Canyon river miles, where river mile 0 = Lees Ferry but river kilometer 0 = Glen Canyon Dam
 
@@ -19,9 +21,30 @@ Normal mile/kilometer conversions
 
 `km_to_mile()`
 
-### Discharge conversions (cubic feet/second, cubic meters/second)
+### 🌊 Discharge conversions (cubic feet/second, cubic meters/second)
 Each conversion function rounds to 3 significant figures to match the accuracy of USGS stream gauges
 
 `cfs_to_cms()`
 
 `cms_to_cfs()`
+
+### 🐟 Total length, fork length, weight conversions
+All functions need species (3 letter code) and length. For example, to calculate the estimated weight of a 375 mm TL Flannelmouth, use `weight_from_total("FMS", 375)`
+
+`total_from_fork()`
+
+`fork_from_total()`
+
+`weight_from_total()`
+
+`weight_from_fork()`
+
+Length/Weight conversions calculated using the included data `weight_length_coef`, which has slopes and intercepts for all conversions and species. Coefficients calculated using AGFD data and NO/TRGD/JCM data (approximately 300k fish records total, per species sample sizes range from tens of thousands for commonly caught species (FMS, RBT, HBC) to 10-20 for rare species (YBH, RBS)
+
+### Lookup tables for GCMRC database codes
+
+To facilitate operations like converting species code to species name without actually opening up the big boy database, several reference tables from the database are included in this package. Most have been edited to clean up capitalization, remove rarely needed columns, and add useful columns.
+
+`GC_species` SPECIES_CODE, COMMON_NAME, genus, species, sci_name
+
+`GC_rivers` RIVER_CODE, river_name, confluence_mile
