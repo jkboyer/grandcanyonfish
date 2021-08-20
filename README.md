@@ -25,3 +25,13 @@ Each conversion function rounds to 3 significant figures to match the accuracy o
 `cfs_to_cms()`
 
 `cms_to_cfs()`
+
+### Total length, fork length, weight conversions
+All functions need species (3 letter code) and length. For example, to calculate the estimated weight of a 375 mm TL Flannelmouth, use `weight_from_total("FMS", 375)`
+
+`total_from_fork()`
+`fork_from_total()`
+`weight_from_total()`
+`weight_from_fork()`
+
+Length/Weight conversions calculated using the included data `weight_length_coef`, which has slopes and intercepts for all conversions and species. Coefficients calculated using AGFD data and NO/TRGD/JCM data (approximately 300k fish records total, per species sample sizes range from tens of thousands for commonly caught species (FMS, RBT, HBC) to 10-20 for rare species (YBH, RBS)
