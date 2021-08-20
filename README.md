@@ -7,7 +7,7 @@ To install:
 
 All functions have documentation/help files, use `?` before a function (run `?mile_to_km_COR()`) to see help file for a function
 
-### River mile to kilometer conversions
+### 📏 River mile to kilometer conversions
 
 Mile/kilometer conversion functions for Grand Canyon river miles, where river mile 0 = Lees Ferry but river kilometer 0 = Glen Canyon Dam
 
@@ -21,14 +21,14 @@ Normal mile/kilometer conversions
 
 `km_to_mile()`
 
-### Discharge conversions (cubic feet/second, cubic meters/second)
+### 🌊 Discharge conversions (cubic feet/second, cubic meters/second)
 Each conversion function rounds to 3 significant figures to match the accuracy of USGS stream gauges
 
 `cfs_to_cms()`
 
 `cms_to_cfs()`
 
-### Total length, fork length, weight conversions
+### 🐟 Total length, fork length, weight conversions
 All functions need species (3 letter code) and length. For example, to calculate the estimated weight of a 375 mm TL Flannelmouth, use `weight_from_total("FMS", 375)`
 
 `total_from_fork()`
