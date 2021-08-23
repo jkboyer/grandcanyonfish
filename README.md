@@ -1,4 +1,4 @@
-# grandcanyonfish
+# grandcanyonfish 🏜️ 🐟
 Functions to simplify working with fisheries data from the Grand Canyon
 
 To install:
@@ -41,9 +41,9 @@ All functions need species (3 letter code) and length. For example, to calculate
 
 Length/Weight conversions calculated using the included data `weight_length_coef`, which has slopes and intercepts for all conversions and species. Coefficients calculated using AGFD data and NO/TRGD/JCM data (approximately 300k fish records total, per species sample sizes range from tens of thousands for commonly caught species (FMS, RBT, HBC) to 10-20 for rare species (YBH, RBS)
 
-### Lookup tables for GCMRC database codes
+### 📑 Lookup tables for GCMRC database codes
 
-To facilitate operations like converting species code to species name without actually opening up the big boy database, several reference tables from the database are included in this package. Most have been edited to clean up capitalization, remove rarely needed columns, and add useful columns.
+To make it easier to convert species/river codes used in our data to actual understandable words (i.e., FMS to Flannelmouth Sucker or Catostomus latipinnis, BAC to Bright Angel Creek), several reference tables from the big boy database are included in this package. Most have been edited to clean up capitalization, remove rarely needed columns, or add useful columns.
 
 `GC_species` SPECIES_CODE, COMMON_NAME, genus, species, sci_name
 
