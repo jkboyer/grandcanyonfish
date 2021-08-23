@@ -8,7 +8,7 @@
 #'
 #' @docType data
 #'
-#' @usage data(weight_length_coef)
+#' @usage data(weight.length.coef)
 #'
 #' @format A Dataset with 21 rows and 10 columns
 #'#' \describe{

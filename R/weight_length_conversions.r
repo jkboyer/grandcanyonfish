@@ -8,10 +8,10 @@
 #' @export
 total_from_fork <- function(species.code, fork.length){
 round(
-  weight_length_coef$TL.from.FL.intercept[
-    weight_length_coef$SPECIES_CODE == species.code] +
-    (fork.length)*(weight_length_coef$TL.from.FL.slope[
-      weight_length_coef$SPECIES_CODE == species.code]),
+  weight.length.coef$TL.from.FL.intercept[
+    weight.length.coef$SPECIES_CODE == species.code] +
+    (fork.length)*(weight.length.coef$TL.from.FL.slope[
+      weight.length.coef$SPECIES_CODE == species.code]),
   0)
 }
 
@@ -25,10 +25,10 @@ round(
 #' @export
 fork_from_total <- function(species.code, total.length){
   round(
-    weight_length_coef$FL.from.TL.intercept[
-      weight_length_coef$SPECIES_CODE == species.code] +
-      (total.length)*(weight_length_coef$FL.from.TL.slope[
-        weight_length_coef$SPECIES_CODE == species.code]),
+    weight.length.coef$FL.from.TL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code] +
+      (total.length)*(weight.length.coef$FL.from.TL.slope[
+        weight.length.coef$SPECIES_CODE == species.code]),
     0)
 }  
 
@@ -45,10 +45,10 @@ fork_from_total <- function(species.code, total.length){
 #' @export
 weight_from_total <- function(species.code, total.length){
   round(
-    10^(weight_length_coef$wt.from.TL.intercept[
-      weight_length_coef$SPECIES_CODE == species.code] + 
-        weight_length_coef$wt.from.FL.slope[
-          weight_length_coef$SPECIES_CODE == species.code]*
+    10^(weight.length.coef$wt.from.TL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code] + 
+        weight.length.coef$wt.from.FL.slope[
+          weight.length.coef$SPECIES_CODE == species.code]*
         log10(total.length)),
     0)
 }
@@ -66,10 +66,10 @@ weight_from_total <- function(species.code, total.length){
 #' @export
 weight_from_fork <- function(species.code, fork.length){
   round(
-    10^(weight_length_coef$wt.from.FL.intercept[
-      weight_length_coef$SPECIES_CODE == species.code] + 
-        weight_length_coef$wt.from.FL.slope[
-          weight_length_coef$SPECIES_CODE == species.code]*
+    10^(weight.length.coef$wt.from.FL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code] + 
+        weight.length.coef$wt.from.FL.slope[
+          weight.length.coef$SPECIES_CODE == species.code]*
         log10(fork.length)),
     0)
 }

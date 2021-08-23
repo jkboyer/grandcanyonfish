@@ -14,7 +14,7 @@
 #' confluences <- mile_to_km_COR(c(61.4, 89.1, 157))
 #' @export
 mile_to_km_COR <- function(river.mile) {
-  round(1.60934*(river.mile + 15.8), 1)
+  round(1.60934*(river.mile + 15.8), 2)
 }
 
 #' Convert river kilometers (rkm 0 = Glen Canyon Dam) to miles (RM 0 = Lees Ferry)
@@ -27,7 +27,7 @@ mile_to_km_COR <- function(river.mile) {
 #' mile2 <- mile_to_km_COR(c(150.23, 358.3))
 #' @export
 km_to_mile_COR <- function(rkm) {
-  round(rkm/1.60934 - 15.8, 1)
+  round(rkm/1.60934 - 15.8, 2)
 }
 
 #' Convert  miles to kilometers
