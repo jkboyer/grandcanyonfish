@@ -49,3 +49,8 @@ To make it easier to convert species/river codes used in our data to actual unde
 
 `gc.rivers` RIVER_CODE, river_name, confluence_mile
 
+`gc.gear` GEAR_CODE, gear, description
+The `gear` column provides a plain English gear name (i.e., "Boat Electrofishing", "Trammel Net", "PIT Tag Antenna") so you don't need to remember what in the world codes like BK, TL, and MHB mean.
+
+`gc.sample.type` SAMPLE_TYPE, sample_type, agency, river, description
+`SAMPLE_TYPE` is the numeric code, `sample_type` has a short text description of project.
