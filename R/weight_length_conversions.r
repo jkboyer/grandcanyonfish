@@ -4,33 +4,59 @@
 #' @param fork.length fork length (mm)
 #' @return total length (mm)
 #' @examples 
-#' total_from_fork("FMS", 437)
+#' fork_to_total("FMS", 437)
 #' @export
-total_from_fork <- function(species.code, fork.length){
-round(
-  weight.length.coef$TL.from.FL.intercept[
-    weight.length.coef$SPECIES_CODE == species.code] +
-    (fork.length)*(weight.length.coef$TL.from.FL.slope[
-      weight.length.coef$SPECIES_CODE == species.code]),
-  0)
+fork_to_total <- Vectorize(function(species.code, fork.length){
+  
+  if (species.code %in% weight.length.coef$SPECIES_CODE & !is.na(fork.length)){
+    
+    #define coefficients for the species
+    intercept <-  weight.length.coef$TL.from.FL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    slope <- weight.length.coef$TL.from.FL.slope[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    #calculate total length
+    round(intercept + slope*fork.length)
+    
+  }
+  
+  else {
+    NA #return NA if data is missing or species not in weight.length.coef
+  }
 }
+)
 
-#' Predict Total Length from Fork Length
+#' Predict Fork Length from Total Length
 #' 
 #' @param species.code 3 letter GCMRC species code (i.e., "FMS", "HBC", "RBT")
 #' @param total.length fork length (mm)
 #' @return fork length (mm)
 #' @examples 
-#' fork_from_total("HBC", 282)
+#' total_to_fork("HBC", 282)
 #' @export
-fork_from_total <- function(species.code, total.length){
-  round(
-    weight.length.coef$FL.from.TL.intercept[
-      weight.length.coef$SPECIES_CODE == species.code] +
-      (total.length)*(weight.length.coef$FL.from.TL.slope[
-        weight.length.coef$SPECIES_CODE == species.code]),
-    0)
-}  
+total_to_fork <- Vectorize(function(species.code, total.length){
+  
+  if (species.code %in% weight.length.coef$SPECIES_CODE & !is.na(total.length)){
+    
+    #define coefficients for the species
+    intercept <-  weight.length.coef$FL.from.TL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    slope <- weight.length.coef$FL.from.TL.slope[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    #calculate total length
+    round(intercept + slope*total.length)
+    
+  }
+  
+  else {
+    NA #return NA if data is missing or species not in weight.length.coef
+  }
+}
+)
 
 #' Predict Weight (g) from Total Length (mm)
 #' 
@@ -41,17 +67,27 @@ fork_from_total <- function(species.code, total.length){
 #' @param total.length (mm)
 #' @return weight (g)
 #' @examples 
-#' weight_from_total("RBT", 307)
+#' total_to_weight("RBT", 307)
 #' @export
-weight_from_total <- function(species.code, total.length){
-  round(
-    10^(weight.length.coef$wt.from.TL.intercept[
-      weight.length.coef$SPECIES_CODE == species.code] + 
-        weight.length.coef$wt.from.FL.slope[
-          weight.length.coef$SPECIES_CODE == species.code]*
-        log10(total.length)),
-    0)
+total_to_weight <- Vectorize(function(species.code, total.length){
+  
+  if (species.code %in% weight.length.coef$SPECIES_CODE & !is.na(total.length)){
+  
+    intercept <- weight.length.coef$wt.from.TL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    slope <-  weight.length.coef$wt.from.TL.slope[
+          weight.length.coef$SPECIES_CODE == species.code]
+    
+    round(10^(intercept + slope*log10(total.length)))
+      
 }
+  else {
+    NA #return NA if data is missing or species not in weight.length.coef
+  }
+}
+)
+
 
 #' Predict Weight (g) from Fork Length (mm)
 #' 
@@ -62,14 +98,24 @@ weight_from_total <- function(species.code, total.length){
 #' @param fork.length (mm)
 #' @return weight (g)
 #' @examples 
-#' weight_from_fork("BHS", 226)
+#' fork_to_weight("BHS", 226)
 #' @export
-weight_from_fork <- function(species.code, fork.length){
-  round(
-    10^(weight.length.coef$wt.from.FL.intercept[
-      weight.length.coef$SPECIES_CODE == species.code] + 
-        weight.length.coef$wt.from.FL.slope[
-          weight.length.coef$SPECIES_CODE == species.code]*
-        log10(fork.length)),
-    0)
+fork_to_weight <- Vectorize(function(species.code, fork.length){
+  
+  if (species.code %in% weight.length.coef$SPECIES_CODE & !is.na(fork.length)){
+    
+    intercept <- weight.length.coef$wt.from.FL.intercept[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    slope <-  weight.length.coef$wt.from.FL.slope[
+      weight.length.coef$SPECIES_CODE == species.code]
+    
+    round(10^(intercept + slope*log10(fork.length)))
+    
+  }
+  else {
+    NA #return NA if data is missing or species not in weight.length.coef
+  }
 }
+)
+

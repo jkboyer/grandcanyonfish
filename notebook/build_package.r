@@ -14,7 +14,7 @@ roxygenise()      # Builds the help file
 ?mile_to_km_COR
 
 # put package on github
-usethis::use_git() #this does a git commit but does not push to my github
+#usethis::use_git() #this does a git commit but does not push to my github
 #usethis::use_github() #create repo on my github
 
 # test that loading from github works
