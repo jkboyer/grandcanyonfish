@@ -55,6 +55,8 @@ Several reference tables from the big boy database are included in this package,
 
 `gc.sample.type` SAMPLE_TYPE, sample_type, agency, river, description
 
+`gc.disposition` DISPOSITION_CODE, disposition, disposition_simple, disposition_mr
+
 As long as you have kept the same column names used by the big boy, these data can be easily merged onto your dataframes:
 
 `mydata <- mydata %>% left_join(gc.species) #tidyverse`
