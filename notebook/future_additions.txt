@@ -1,0 +1,22 @@
+# Ideas for functions and data to add to grandcanyonfish package
+
+plot theme
+
+fish silouettes to use in plots
+
+river mile to lat/long data and conversion function
+
+function to find species errors based on TL/FL/weight
+
+function to predict species based on TL/FL ratio
+
+ASCII native fish art
+
+additional big boy tables
+
+tables of total/fork/weight in 1 mm increments for common species (to provide plotable lines)
+(maybe even ribbons to show maximum plausible?)
+
+Basemap with plotting by river mile enabled (use ggplot to plot map)
+
+download GCMRC gauge data (like dataRetrieval)

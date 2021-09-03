@@ -131,6 +131,27 @@ save(gc.sample.type, file = "./data/GC_sample_types.RData")
 
 
 #Add 
+#to get data into Rdata format to include in package
+#load data from text
+weight.length.coef <- read.table("./notebook/weight_length_coefficients.tsv",
+                                 header = TRUE)
+str(weight.length.coef)
+
+#save
+save(weight.length.coef, file = "./data/weight_length_coef.RData")
+
+library(tidyverse)
+gc.disposition <- read.csv("C:/Users/jboyer/Documents/FISH_T_DISPOSITION_LU.csv")
+
+gc.disposition <- gc.disposition %>%
+  mutate(disposition = str_to_title(disposition))
+
+save(gc.disposition, file = "./data/GC_disposition.RData")
+
+
+
+
+
 #"GCMRC_T_SAMPLE_TYPE" #project, agency
 #RM to lat/long coordinates
 #"FISH_T_DISPOSITION_LU"

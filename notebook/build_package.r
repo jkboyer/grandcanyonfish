@@ -22,13 +22,4 @@ devtools::install_github("jkboyer/grandcanyonfish")
 library(grandcanyonfish)
 
 
-#to get data into Rdata format to include in package
-#load data from text
-weight.length.coef <- read.table("./notebook/weight_length_coefficients.tsv",
-                                 header = TRUE)
-str(weight.length.coef)
-
-#save
-save(weight.length.coef, file = "./data/weight_length_coef.RData")
-
 
