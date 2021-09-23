@@ -1,5 +1,5 @@
 # grandcanyonfish 🏜️ 🐟
-Functions to simplify working with fisheries data from the Grand Canyon
+R package with functions to simplify working with fisheries data from the Grand Canyon
 
 To install:
 
