@@ -20,3 +20,5 @@ tables of total/fork/weight in 1 mm increments for common species (to provide pl
 Basemap with plotting by river mile enabled (use ggplot to plot map)
 
 download GCMRC gauge data (like dataRetrieval)
+
+geom_areas and lines of expected fish weights (to use when checking data to see if your fish makes sense)
